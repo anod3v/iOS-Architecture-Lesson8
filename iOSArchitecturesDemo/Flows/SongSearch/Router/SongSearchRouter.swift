@@ -17,8 +17,8 @@ class SongSearchRouter: SongSearchRouterInput {
     weak var viewController: UIViewController?
     
     func openDetail(for app: ITunesSong) {
-//        let appDetailViewController = AppDetailViewController(app: app)
-//        viewController?.navigationController?.pushViewController(appDetailViewController, animated: true)
+        let appDetailViewController = SongDetailViewController(song: app)
+        viewController?.navigationController?.pushViewController(appDetailViewController, animated: true)
     }
     
     func openSongInItunes(app: ITunesSong) {
