@@ -96,11 +96,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		55932ED225BD821400717DFC /* SongSearch */ = {
+		558098B525BDA21000AB6477 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				558098B325BD934900AB6477 /* SongSearchRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		558098B625BDA21B00AB6477 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
 				558098B125BD931C00AB6477 /* SongSearchInteractor.swift */,
-				558098B325BD934900AB6477 /* SongSearchRouter.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		55932ED225BD821400717DFC /* SongSearch */ = {
+			isa = PBXGroup;
+			children = (
+				558098B625BDA21B00AB6477 /* Interactor */,
+				558098B525BDA21000AB6477 /* Router */,
 				55932ED325BD823900717DFC /* Builder */,
 				55932ED425BD826400717DFC /* Presenter */,
 				55932ED525BD829500717DFC /* View */,
