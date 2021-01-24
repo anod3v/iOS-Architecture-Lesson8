@@ -123,10 +123,8 @@
 		55932ED225BD821400717DFC /* SongSearch */ = {
 			isa = PBXGroup;
 			children = (
-				55ECB0B625BDB14800874238 /* SongDetailView.swift */,
-				55ECB0B825BDB1EB00874238 /* SongDetailHeaderView.swift */,
-				55ECB0BA25BDB21C00874238 /* SongDetailViewController.swift */,
-				55ECB0BC25BDB25C00874238 /* SongDetailHeaderViewController.swift */,
+				55ECB0BE25BDBF6200874238 /* SongView */,
+				55ECB0BF25BDBF8500874238 /* SongController */,
 				558098B625BDA21B00AB6477 /* Interactor */,
 				558098B525BDA21000AB6477 /* Router */,
 				55932ED325BD823900717DFC /* Builder */,
@@ -169,6 +167,24 @@
 				5506C49425B89E660083BCBF /* SongCellModel.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		55ECB0BE25BDBF6200874238 /* SongView */ = {
+			isa = PBXGroup;
+			children = (
+				55ECB0B625BDB14800874238 /* SongDetailView.swift */,
+				55ECB0B825BDB1EB00874238 /* SongDetailHeaderView.swift */,
+			);
+			path = SongView;
+			sourceTree = "<group>";
+		};
+		55ECB0BF25BDBF8500874238 /* SongController */ = {
+			isa = PBXGroup;
+			children = (
+				55ECB0BA25BDB21C00874238 /* SongDetailViewController.swift */,
+				55ECB0BC25BDB25C00874238 /* SongDetailHeaderViewController.swift */,
+			);
+			path = SongController;
 			sourceTree = "<group>";
 		};
 		57C7B665100BF98217348F74 /* Pods */ = {
