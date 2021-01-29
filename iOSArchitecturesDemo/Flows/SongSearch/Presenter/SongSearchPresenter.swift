@@ -19,16 +19,24 @@ protocol SongSearchViewInput: AnyObject {
 
 protocol SongSearchViewOutput: AnyObject {
     func viewDidSearch(with query: String)
-    func viewDidSelectApp(app: ITunesSong)
+    func viewDidSelectSong(app: ITunesSong)
 }
 
 class SongPresenter {
     weak var viewInput: (UIViewController & SongSearchViewInput)?
     
     private let searchService = ITunesSearchService()
+    let interactor: SongSearchInteractorInput
+    let router: SongSearchRouterInput
     
-    private func requestApp(with query: String) {
-        self.searchService.getSongs(forQuery: query) { [weak self] result in
+    init(interactor: SongSearchInteractorInput, router: SongSearchRouterInput) {
+        self.interactor = interactor
+        self.router = router
+    }
+    
+    private func requestSong(with query: String) {
+        
+        interactor.requestSongs(with: query) { [weak self] result in
             guard let self = self else { return }
             
             self.viewInput?.throbber(show: false)
@@ -49,8 +57,12 @@ class SongPresenter {
     }
     
     private func openDetails(for app: ITunesSong) {
+        router.openDetail(for: app)
+        
+        
 //        let appDetailViewController = AppDetailViewController(app: app)
-//        
+        
+        
 //        viewInput?.navigationController?.pushViewController(appDetailViewController, animated: true)
     }
 }
@@ -58,13 +70,12 @@ class SongPresenter {
 extension SongPresenter: SongSearchViewOutput {
     func viewDidSearch(with query: String) {
         viewInput?.throbber(show: true)
-        requestApp(with: query)
+        requestSong(with: query)
     }
     
-    func viewDidSelectApp(app: ITunesSong) {
+    func viewDidSelectSong(app: ITunesSong) {
         openDetails(for: app)
     }
     
     
 }
-

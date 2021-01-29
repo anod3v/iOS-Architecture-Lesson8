@@ -84,15 +84,15 @@ extension SongSearchViewController: UITableViewDataSource {
 //MARK: - UITableViewDelegate
 extension SongSearchViewController: UITableViewDelegate {
 
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        tableView.deselectRow(at: indexPath, animated: true)
-//        let app = searchResults[indexPath.row]
-//        let appDetaillViewController = AppDetailViewController(app: app)
-//        appDetaillViewController.app = app
-//
-//        presenter.viewDidSelectApp(app: app)
-////        navigationController?.pushViewController(appDetaillViewController, animated: true)
-//    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let app = searchResults[indexPath.row]
+        let appDetaillViewController = SongDetailViewController(song: app)
+        appDetaillViewController.song = app
+
+        presenter.viewDidSelectSong(app: app)
+//        navigationController?.pushViewController(appDetaillViewController, animated: true)
+    }
 }
 
 //MARK: - UISearchBarDelegate
